@@ -5,7 +5,7 @@ const doc = {
     title: 'wdd341',
     description: 'Web Services Project',
   },
-  host: 'wdd341-01.onrender.com',
+  host: 'accounting-gwkc.onrender.com',
   schemes: ['https'],
 };
 

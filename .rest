@@ -1,14 +1,14 @@
-GET https://wdd341-01.onrender.com/
+GET https://accounting-gwkc.onrender.com/
 ###
 GET http://localhost:3000/ HTTP/1.1
 ###
 GET http://localhost:3000/accounts HTTP/1.1
 ###
-GET https://wdd341-01.onrender.com/accounts
+GET https://accounting-gwkc.onrender.com/accounts
 ###
 GET http://localhost:3000/accounts/6444460cad10af8ef40ef881 HTTP/1.1
 ###
-GET https://wdd341-01.onrender.com/accounts/6444460cad10af8ef40ef881
+GET https://accounting-gwkc.onrender.com/accounts/6444460cad10af8ef40ef881
 ###
 POST http://localhost:3000/accounts HTTP/1.1
 content-type: application/json
@@ -19,7 +19,7 @@ content-type: application/json
 }
 
 ###
-POST https://wdd341-01.onrender.com/accounts
+POST https://accounting-gwkc.onrender.com/accounts
 content-type: application/json
 
 {
@@ -40,7 +40,7 @@ content-type: application/json
 }
 
 ###
-PUT https://wdd341-01.onrender.com/accounts/6449f7ff5a150846090a3089 HTTP/1.1
+PUT https://accounting-gwkc.onrender.com/accounts/6449f7ff5a150846090a3089 HTTP/1.1
 content-type: application/json
 
 {
@@ -56,4 +56,4 @@ content-type: application/json
 DELETE http://localhost:3000/accounts/644cbe1a3da9b19b40111baa HTTP/1.1
 
 ###
-DELETE https://wdd341-01.onrender.com/accounts/644cbe1a3da9b19b40111ba9 HTTP/1.1
+DELETE https://accounting-gwkc.onrender.com/accounts/644cbe1a3da9b19b40111ba9 HTTP/1.1

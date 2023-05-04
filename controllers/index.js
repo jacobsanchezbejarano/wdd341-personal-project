@@ -5,7 +5,7 @@ get_name = (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.statusCode = 200;
-    res.send('Nola Justiniano');
+    res.send('Accounting');
 }
 
 module.exports = {
