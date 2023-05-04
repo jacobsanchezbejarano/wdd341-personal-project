@@ -32,11 +32,8 @@ PUT http://localhost:3000/accounts/644cb36e4272efadb53883ef HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Carlitos",
-    "lastName": "Aguilar",
-    "email": "test@test.com",
-    "favoriteColor": "Purple",
-    "birthday": "1996-12-20"
+    "cod_account": "10003",
+    "nom_account": "Bank 2"
 }
 
 ###
@@ -44,11 +41,8 @@ PUT https://accounting-gwkc.onrender.com/accounts/6449f7ff5a150846090a3089 HTTP/
 content-type: application/json
 
 {
-    "firstName": "Pepe",
-    "lastName": "Juarez",
-    "email": "test@test.com",
-    "favoriteColor": "Purple",
-    "birthday": "1996-12-12"
+    "cod_account": "10003",
+    "nom_account": "Bank 2"
 }
 
 
