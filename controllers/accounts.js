@@ -22,7 +22,11 @@ const getSingle = async (req, res, next) => {
 
 const post_account = async (req, res, next) => {
   console.log(req.body);
-  const data = req.body;
+  //const data = req.body;
+  const data = {
+    "cod_account": req.body.cod_account,
+    "nom_account": req.body.nom_account
+  };
 
     const response = await mongodb.getCluster().db().collection('plan').insertOne(data);
     if (response.acknowledged) {
