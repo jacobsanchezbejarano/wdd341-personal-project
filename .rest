@@ -14,8 +14,8 @@ POST http://localhost:3000/accounts HTTP/1.1
 content-type: application/json
 
 {
-    "cod_account": "10002",
-    "nom_account": "Bank"
+    "cod_account": "",
+    "nom_account": "Bank USD"
 }
 
 ###
@@ -28,12 +28,12 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:3000/accounts/644cb36e4272efadb53883ef HTTP/1.1
+PUT http://localhost:3000/accounts/6456c9c1c3af6a09dad423a9 HTTP/1.1
 content-type: application/json
 
 {
-    "cod_account": "10003",
-    "nom_account": "Bank 2"
+    "cod_account": "10005",
+    "nom_account": "Bank BCP USD"
 }
 
 ###
@@ -47,7 +47,7 @@ content-type: application/json
 
 
 ###
-DELETE http://localhost:3000/accounts/644cbe1a3da9b19b40111baa HTTP/1.1
+DELETE http://localhost:3000/accounts/6456c9cfe7c622f161294c01 HTTP/1.1
 
 ###
 DELETE https://accounting-gwkc.onrender.com/accounts/644cbe1a3da9b19b40111ba9 HTTP/1.1
