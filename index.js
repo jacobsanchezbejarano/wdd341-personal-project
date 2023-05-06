@@ -12,9 +12,11 @@ app.use(bodyParser.json()).use('/', require('./routes'))
   res.setHeader('Content-Type','application/json');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
-  })
-  
-  ;
+  });
+
+process.on('uncaughtException',(err,origin) =>{
+  console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+});
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
