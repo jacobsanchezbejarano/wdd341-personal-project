@@ -4,6 +4,8 @@ const app = express();
 const mongodb = require('./db/connect');
 const port = process.env.PORT || 3030;
 const hostname = '127.0.0.1';
+const path = require('path');
+const axios = require('axios');
 
 app.use(bodyParser.json()).use('/', require('./routes'))
   .use((req, res, next) => {
@@ -13,6 +15,7 @@ app.use(bodyParser.json()).use('/', require('./routes'))
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
   });
+
 
 process.on('uncaughtException',(err,origin) =>{
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
