@@ -3,7 +3,7 @@ const routes = express.Router();
 const accountsFunctions = require('../controllers/accounts');
 const { isAuthenticated } = require("../helpers/authenticate");
 
-routes.get('/', accountsFunctions.getAll);
+routes.get('/', isAuthenticated, accountsFunctions.getAll);
 routes.get('/:id', isAuthenticated, accountsFunctions.getSingle);
 routes.post('/', isAuthenticated, accountsFunctions.post_account);
 routes.put('/:id', isAuthenticated, accountsFunctions.update_account);
