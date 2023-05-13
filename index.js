@@ -11,7 +11,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json()).use('/', require('./routes'))
 .use(session({
   secret: "secret",
   resave: false ,
@@ -28,8 +28,7 @@ app.use(bodyParser.json())
   res.setHeader('Content-Type','application/json');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
-  })
-  .use("/", require("./routes/index.js"));
+  });
 
   passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
