@@ -67,7 +67,6 @@ content-type: application/json
 {
   "cod_tra": "2",
   "cod_account": "10002",
-  "date": null,
   "debe": "100",
   "haber": "0",
   "status": "A"
@@ -80,7 +79,6 @@ content-type: application/json
 {
   "cod_tra": "2",
   "cod_account": "10002",
-  "date": null,
   "debe": "100",
   "haber": "0",
   "status": "A"
@@ -93,7 +91,6 @@ content-type: application/json
 {
   "cod_tra": "2",
   "cod_account": "10002",
-  "date": null,
   "debe": "100",
   "haber": "0",
   "status": "A"
@@ -106,7 +103,6 @@ content-type: application/json
 {
   "cod_tra": "2",
   "cod_account": "10002",
-  "date": null,
   "debe": "100",
   "haber": "0",
   "status": "A"
