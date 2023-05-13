@@ -57,7 +57,7 @@ app.use(bodyParser.json()).use('/', require('./routes'))
   app.get('/github/callback', passport.authenticate('github', {
       failureRedirect: '/api-docs', session: false}), 
       (req, res) => {
-        console.log(req.user);
+      console.log(req.user);
       req.session.user = req.user;
       res.redirect('/');
     });
