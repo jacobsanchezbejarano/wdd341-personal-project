@@ -11,7 +11,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(bodyParser.json()).use('/', require('./routes'))
+app.use(bodyParser.json())
 .use(session({
   secret: "secret",
   resave: false ,
