@@ -20,7 +20,8 @@ app.use(bodyParser.json())
 // This is the basic express session({..}) initialization.
 .use(passport.initialize()) 
 // init passport on every route call.
-.use(passport.session())    
+.use(passport.session())
+.use('/', require('./routes'))    
 // allow passport to use "express-session".
   .use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -28,7 +29,7 @@ app.use(bodyParser.json())
   res.setHeader('Content-Type','application/json');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
-  }).use('/', require('./routes'));
+  });
 
   passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
