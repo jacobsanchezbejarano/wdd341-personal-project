@@ -31,11 +31,11 @@ const getSingle_transactions = async (req, res, next) => {
 const post_transactions = async (req, res, next) => {
   console.log(req.body);
   //const data = req.body;
-  const timestamp = new Date.UTC;
+  const timestamp = new Date().toJSON();
   const data = {
         "cod_tra": req.body.cod_tra,
         "cod_account": req.body.cod_account,
-        "date": new Date().toJSON(),
+        "date": timestamp,
         "debe": req.body.debe,
         "haber": req.body.haber,
         "status": req.body.status
@@ -51,10 +51,11 @@ const post_transactions = async (req, res, next) => {
 
 const update_transactions = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
+  const timestamp = new Date().toJSON();
   const data = {
         "cod_tra": req.body.cod_tra,
         "cod_account": req.body.cod_account,
-        "date": new Date().toJSON(),
+        "date": timestamp,
         "debe": req.body.debe,
         "haber": req.body.haber,
         "status": req.body.status
