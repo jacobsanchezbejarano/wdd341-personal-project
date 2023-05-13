@@ -8,7 +8,6 @@ const passport = require('passport');
 
 routes.use('/accounts', require('./accounts'));
 routes.use('/', require('./swagger'));
-routes.get('/', functions.get_name);
 
 routes.get('/login', passport.authenticate('github'), (req, res) => {});
 
