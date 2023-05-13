@@ -34,7 +34,7 @@ const post_transactions = async (req, res, next) => {
   const data = {
         "cod_tra": req.body.cod_tra,
         "cod_account": req.body.cod_account,
-        "date": req.body.date,
+        //"date": req.body.date,
         "debe": req.body.debe,
         "haber": req.body.haber,
         "status": req.body.status
@@ -53,7 +53,7 @@ const update_transactions = async (req, res, next) => {
   const data = {
         "cod_tra": req.body.cod_tra,
         "cod_account": req.body.cod_account,
-        "date": req.body.date,
+        //"date": req.body.date,
         "debe": req.body.debe,
         "haber": req.body.haber,
         "status": req.body.status
