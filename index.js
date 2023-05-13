@@ -28,7 +28,7 @@ app.use(bodyParser.json()).use('/', require('./routes'))
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, Z-Key, Authorization');
   res.setHeader('Content-Type','application/json');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
   })
   .use("/", require("./routes/index.js"));
@@ -57,6 +57,7 @@ app.use(bodyParser.json()).use('/', require('./routes'))
   app.get('/github/callback', passport.authenticate('github', {
       failureRedirect: '/api-docs', session: false}), 
       (req, res) => {
+        console.log(req.user);
       req.session.user = req.user;
       res.redirect('/');
     });
