@@ -7,6 +7,7 @@ const functions = require('../controllers/');
 const passport = require('passport');
 
 routes.use('/accounts', require('./accounts'));
+routes.use('/transactions', require('./transactions'));
 routes.use('/', require('./swagger'));
 
 routes.get('/login', passport.authenticate('github'), (req, res) => {});
