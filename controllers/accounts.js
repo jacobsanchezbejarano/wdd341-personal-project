@@ -29,7 +29,7 @@ const getSingle_account = async (req, res, next) => {
 };
 
 const post_account = async (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   //const data = req.body;
   const data = {
     "cod_account": req.body.cod_account,

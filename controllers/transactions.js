@@ -29,7 +29,7 @@ const getSingle_transactions = async (req, res, next) => {
 };
 
 const post_transactions = async (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   //const data = req.body;
   const timestamp = new Date().toJSON();
   const data = {

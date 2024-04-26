@@ -10,7 +10,7 @@ const cors = require('cors');
 
 
 const app = express();
-
+app.use(cors());
 app.use(bodyParser.json())
 .use(session({
   secret: "secret",

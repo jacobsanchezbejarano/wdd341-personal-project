@@ -8,6 +8,9 @@ const passport = require('passport');
 
 routes.use('/accounts', require('./accounts'));
 routes.use('/transactions', require('./transactions'));
+routes.use('/cotizaciones', require('./cotizaciones'));
+routes.use('/newsletter', require('./newsletter'));
+routes.use('/email', require('./email'));
 routes.use('/', require('./swagger'));
 
 routes.get('/login', passport.authenticate('github'), (req, res) => {});
