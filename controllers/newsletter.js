@@ -44,7 +44,7 @@ const post_newsletter = async (req, res, next) => {
         const existingRecord = await mongodb.getCluster().db().collection('newsletter').findOne({ email: req.body.email });
 
         if (existingRecord) {
-            res.status(400).json({ error: 'Ya existe una cotización para este correo electrónico' });
+            res.status(400).json({ error: 'Ya existe una suscripcion para este correo electrónico' });
         } else {
             const response = await mongodb.getCluster().db().collection('newsletter').insertOne(data);
             if (response.acknowledged) {
