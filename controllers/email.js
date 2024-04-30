@@ -85,7 +85,7 @@ const send_mail = async (req, res, next) => {
         const mailOptions_sendToAdmin = {
             from: 'Devssoft <'+process.env.EMAIL_USER_DEVSSOFT+'>',
             to: process.env.EMAIL_USER_DEVSSOFT,
-            subject: 'Solicitu d de Cotización - Devssoft',
+            subject: 'Solicitud de Cotización - Devssoft',
             html: `
             <html>
             <head>
