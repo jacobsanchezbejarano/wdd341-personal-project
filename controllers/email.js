@@ -149,6 +149,7 @@ const send_mail = async (req, res, next) => {
 
         // Envía una respuesta de éxito al cliente
         // console.log('Correo electrónico enviado: ' + info.response);
+        // console.log('Correo electrónico enviado: ' + info2.response);
         res.status(200).send('Correo electrónico enviado correctamente');
     } catch (error) {
         // Manejar cualquier error que ocurra durante el envío del correo electrónico
