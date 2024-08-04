@@ -11,10 +11,14 @@ const getCountryFromIp = async (req, res, next) => {
   const token = process.env.IP_INFO_TOKEN;
   try {
     const response = await axios.get(`https://ipinfo.io/${userIp}/json?token=${token}`);
-    return response.data.country;
+    res.setHeader('Content-Type', 'application/json');
+    res.statusCode = 200;
+    res.json({country:response.data.country});
   } catch (error) {
     console.error("Error fetching country data", error);
-    return 'US'; // Valor por defecto
+    res.setHeader('Content-Type', 'application/json');
+    res.statusCode = 200;
+    res.json({country:'US'});
   }
 };
 
