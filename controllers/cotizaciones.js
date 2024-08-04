@@ -6,7 +6,7 @@ dotenv.config();
 
 // Función para obtener el país del usuario desde ipinfo.io
 const getCountryFromIp = async (req, res, next) => {
-  const userIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  const userIp = req.ipuser || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const token = process.env.IP_INFO_TOKEN;
   try {
     const response = await axios.get(`https://ipinfo.io/${userIp}/json?token=${token}`);
