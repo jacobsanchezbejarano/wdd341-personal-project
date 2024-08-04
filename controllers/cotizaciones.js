@@ -4,6 +4,10 @@ const ObjectId = require('mongodb').ObjectId;
 const { send_mail } = require("./email");
 const dotenv = require('dotenv');
 dotenv.config();
+let text = require('../db/prices.son');
+
+const languages = text.languages;
+const prices = text.prices;
 
 // Función para obtener el país del usuario desde ipinfo.io
 const getCountryFromIp = async (req, res, next) => {
@@ -11,14 +15,63 @@ const getCountryFromIp = async (req, res, next) => {
   const token = process.env.IP_INFO_TOKEN;
   try {
     const response = await axios.get(`https://ipinfo.io/${userIp}/json?token=${token}`);
+    const country = response.data.country || 'US'; // Default to 'US' if country not found
     res.setHeader('Content-Type', 'application/json');
     res.statusCode = 200;
-    res.json({country:response.data.country});
+    res.json({ country });
   } catch (error) {
     console.error("Error fetching country data", error);
     res.setHeader('Content-Type', 'application/json');
     res.statusCode = 200;
-    res.json({country:'US'});
+    res.json({ country: 'US' }); // Default to 'US' in case of error
+  }
+};
+
+// Función para obtener los textos y precios según el país
+const getTextsAndPrices = (country, language) => {
+  const countryPrices = prices[country] || prices['US']; // Default to 'US' prices if country not found
+  const languageTexts = languages[language];
+  
+  if (!languageTexts) {
+    throw new Error(`Language texts for '${language}' not found`);
+  }
+
+  return {
+    Basic: {
+      ...languageTexts.Basic,
+      price: countryPrices.Basic
+    },
+    Standard: {
+      ...languageTexts.Standard,
+      price: countryPrices.Standard
+    },
+    Premium: {
+      ...languageTexts.Premium,
+      price: countryPrices.Premium
+    }
+  };
+};
+
+// Endpoint para obtener textos y precios
+const getTextsAndPricesEndpoint = async (req, res) => {
+  const userIp = req.params.id;
+  const lang = req.params.lang;
+  const token = process.env.IP_INFO_TOKEN;
+  try {
+    const response = await axios.get(`https://ipinfo.io/${userIp}/json?token=${token}`);
+    const country = response.data.country || 'US'; // Default to 'US' if country not found
+    const language = req.query.lang || 'en'; // Get language from query parameter, default to 'en'
+
+    const textsAndPrices = getTextsAndPrices(country, language);
+    
+    res.setHeader('Content-Type', 'application/json');
+    res.statusCode = 200;
+    res.json(textsAndPrices);
+  } catch (error) {
+    console.error("Error fetching data", error);
+    res.setHeader('Content-Type', 'application/json');
+    res.statusCode = 500;
+    res.json({ error: "Error fetching data" });
   }
 };
 
@@ -118,5 +171,6 @@ module.exports = {
     post_cotizaciones,
     update_cotizaciones,
     delete_cotizaciones,
-    getCountryFromIp
+    getCountryFromIp,
+    getTextsAndPricesEndpoint
 }

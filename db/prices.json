@@ -1,0 +1,105 @@
+{
+    "languages": {
+      "en": {
+        "Basic": {
+          "title": "Basic",
+          "description": [
+            "Landing page",
+            "Domain for one year",
+            "Static files",
+            "Email support"
+          ],
+          "buttonText": "Contact Us",
+          "buttonVariant": "outlined"
+        },
+        "Standard": {
+          "title": "Standard",
+          "description": [
+            "Landing page",
+            "Domain for 2 years",
+            "Static files",
+            "Google Login integration",
+            "Priority email support",
+            "Dedicated support"
+          ],
+          "buttonText": "Contact Us",
+          "buttonVariant": "contained"
+        },
+        "Premium": {
+          "title": "Premium",
+          "description": [
+            "Landing page",
+            "Domain for 5 years",
+            "API integration",
+            "Priority email support",
+            "Dedicated support",
+            "Custom solutions"
+          ],
+          "buttonText": "Contact Us",
+          "buttonVariant": "outlined"
+        }
+      },
+      "es": {
+        "Básico": {
+          "title": "Básico",
+          "description": [
+            "Página de aterrizaje",
+            "Dominio por un año",
+            "Archivos estáticos",
+            "Soporte por email"
+          ],
+          "buttonText": "Contáctanos",
+          "buttonVariant": "outlined"
+        },
+        "Estándar": {
+          "title": "Estándar",
+          "description": [
+            "Página de aterrizaje",
+            "Dominio por 2 años",
+            "Archivos estáticos",
+            "Integración de Google Login",
+            "Soporte por email prioritario",
+            "Soporte dedicado"
+          ],
+          "buttonText": "Contáctanos",
+          "buttonVariant": "contained"
+        },
+        "Premium": {
+          "title": "Premium",
+          "description": [
+            "Página de aterrizaje",
+            "Dominio por 5 años",
+            "Integración de APIs",
+            "Soporte por email prioritario",
+            "Soporte dedicado",
+            "Soluciones a medida"
+          ],
+          "buttonText": "Contáctanos",
+          "buttonVariant": "outlined"
+        }
+      }
+    },
+    "prices": {
+      "US": {
+        "Basic": "199",
+        "Standard": "399",
+        "Premium": "599"
+      },
+      "EU": {
+        "Basic": "179",
+        "Standard": "359",
+        "Premium": "539"
+      },
+      "LA": {
+        "Basic": "99",
+        "Standard": "199",
+        "Premium": "299"
+      },
+      "ES": {
+        "Basic": "129",
+        "Standard": "259",
+        "Premium": "399"
+      }
+    }
+  }
+  
