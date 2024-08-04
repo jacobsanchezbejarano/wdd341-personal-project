@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const { send_mail } = require("./email");
 const dotenv = require('dotenv');
 dotenv.config();
-let text = require('../db/prices.son');
+let text = require('../db/prices.json');
 
 const languages = text.languages;
 const prices = text.prices;
