@@ -1,6 +1,21 @@
 let mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 const { send_mail } = require("./email");
+const dotenv = require('dotenv');
+dotenv.config();
+
+// Función para obtener el país del usuario desde ipinfo.io
+const getCountryFromIp = async (req, res, next) => {
+  const userIp = req.ip || req.headers['x-forwarded-for'] || '0.0.0.0';
+  const token = process.env.IP_INFO_TOKEN;
+  try {
+    const response = await axios.get(`https://ipinfo.io/${userIp}/json?token=${token}`);
+    return response.data.country;
+  } catch (error) {
+    console.error("Error fetching country data", error);
+    return 'US'; // Valor por defecto
+  }
+};
 
 const getAll_cotizaciones = async (req, res, next) => {
   try {
@@ -97,5 +112,6 @@ module.exports = {
     getSingle_cotizaciones,
     post_cotizaciones,
     update_cotizaciones,
-    delete_cotizaciones
+    delete_cotizaciones,
+    getCountryFromIp
 }
