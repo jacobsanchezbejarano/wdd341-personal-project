@@ -66,7 +66,7 @@ const getTextsAndPricesEndpoint = async (req, res) => {
     
     res.setHeader('Content-Type', 'application/json');
     res.statusCode = 200;
-    res.json(textsAndPrices);
+    res.json({'content':textsAndPrices, 'country':country});
   } catch (error) {
     console.error("Error fetching data", error);
     res.setHeader('Content-Type', 'application/json');
