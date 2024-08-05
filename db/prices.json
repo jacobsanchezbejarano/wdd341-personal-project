@@ -40,7 +40,7 @@
         }
       },
       "es": {
-        "Básico": {
+        "Basic": {
           "title": "Básico",
           "description": [
             "Página de aterrizaje",
@@ -51,7 +51,7 @@
           "buttonText": "Contáctanos",
           "buttonVariant": "outlined"
         },
-        "Estándar": {
+        "Standard": {
           "title": "Estándar",
           "description": [
             "Página de aterrizaje",
