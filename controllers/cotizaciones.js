@@ -60,7 +60,7 @@ const getTextsAndPricesEndpoint = async (req, res) => {
   try {
     const response = await axios.get(`https://ipinfo.io/${userIp}/json?token=${token}`);
     const country = response.data.country || 'US'; // Default to 'US' if country not found
-    const language = req.query.lang || 'en'; // Get language from query parameter, default to 'en'
+    const language = lang; // Get language from query parameter, default to 'en'
 
     const textsAndPrices = getTextsAndPrices(country, language);
     
